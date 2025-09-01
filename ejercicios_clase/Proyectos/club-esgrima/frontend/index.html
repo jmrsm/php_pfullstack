@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Club de Esgrima</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-4">
+    <h1 class="mb-4">Club de Esgrima</h1>
+
+    <!-- Menú de pestañas -->
+    <ul class="nav nav-tabs" id="menuTabs" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active" id="tab-competidores" data-bs-toggle="tab" data-bs-target="#competidores" type="button" role="tab">Competidores</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="tab-competencias" data-bs-toggle="tab" data-bs-target="#competencias" type="button" role="tab">Competencias</button>
+        </li>
+    </ul>
+
+    <div class="tab-content mt-3">
+        <!-- Sección Competidores -->
+        <div class="tab-pane fade show active" id="competidores" role="tabpanel">
+            <h3>Lista de Competidores</h3>
+            <table class="table table-striped" id="tablaCompetidores">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Categoría</th>
+                        <th>Arma</th>
+                        <th>Mano</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h4>Agregar Competidor</h4>
+            <form id="formCompetidor" class="row g-3">
+                <div class="col-md-4"><input type="text" id="nombre" class="form-control" placeholder="Nombre" required></div>
+                <div class="col-md-4"><input type="text" id="apellido" class="form-control" placeholder="Apellido" required></div>
+                <div class="col-md-4"><input type="text" id="vi" class="form-control" placeholder="VI" required></div>
+                <div class="col-md-4"><input type="date" id="fechaNacimiento" class="form-control" required></div>
+                <div class="col-md-4"><input type="text" id="categoria" class="form-control" placeholder="Categoría" required></div>
+                <div class="col-md-4"><input type="text" id="arma" class="form-control" placeholder="Arma" required></div>
+                <div class="col-md-4">
+                    <select id="mano" class="form-select">
+                        <option value="derecho">Derecho</option>
+                        <option value="izquierdo">Izquierdo</option>
+                    </select>
+                </div>
+                <div class="col-md-4"><button type="submit" class="btn btn-primary w-100">Guardar</button></div>
+            </form>
+        </div>
+
+        <!-- Sección Competencias -->
+        <div class="tab-pane fade" id="competencias" role="tabpanel">
+            <h3>Lista de Competencias</h3>
+            <table class="table table-striped" id="tablaCompetencias">
+                <thead>
+                    <tr>
+                        <th>Competidor</th>
+                        <th>Competencia</th>
+                        <th>Fecha</th>
+                        <th>Resultado</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h4>Agregar Competencia</h4>
+            <form id="formCompetencia" class="row g-3">
+                <div class="col-md-4">
+                    <select id="competidor_id" class="form-select" required></select>
+                </div>
+                <div class="col-md-4"><input type="text" id="nombre_comp" class="form-control" placeholder="Nombre de la competencia" required></div>
+                <div class="col-md-4"><input type="date" id="fecha_comp" class="form-control" required></div>
+                <div class="col-md-4">
+                    <select id="gano" class="form-select">
+                        <option value="1">Ganó</option>
+                        <option value="0">Perdió</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select id="tipo" class="form-select">
+                        <option value="local">Local</option>
+                        <option value="internacional">Internacional</option>
+                    </select>
+                </div>
+                <div class="col-md-4"><button type="submit" class="btn btn-primary w-100">Guardar</button></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
