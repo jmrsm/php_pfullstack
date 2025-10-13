@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Lab local</title>
+</head>
+<body>
+  <h1>Prueba: Inyección SQL (solo laboratorio)</h1>
+
+  <form action="ejemplo_vulnerable.php" method="get">
+    <label for="email">Email:</label>
+    <input id="email" name="email" type="text" placeholder="juan@ejemplo.com" style="width:300px">
+    <button type="submit">Enviar (vulnerable)</button>
+  </form>
+
+  <form action="ejemplo_seguro.php" method="get" style="margin-top:1em">
+    <label for="email2">Email:</label>
+    <input id="email2" name="email" type="text" placeholder="juan@ejemplo.com" style="width:300px">
+    <button type="submit">Enviar (seguro)</button>
+  </form>
+
+  <hr>
+  <p>Ejemplos maliciosos para probar en laboratorio:</p>
+  <ul>
+    <li><code>a' OR '1'='1</code> (consulta vulnerable devuelve todos los usuarios)</li>
+    <li><code>' OR '1'='1' -- </code></li>
+    <li>No uses payloads destructivos contra bases reales.</li>
+  </ul>
+</body>
+</html>
