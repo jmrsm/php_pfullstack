@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>PokeBuscador</h1>
+        
+        <div class="search-box">
+            <input type="text" id="pokemonInput" placeholder="Nombre o ID del Pokemon...">
+            <button id="searchBtn">Buscar</button>
+        </div>
+
+        <div id="pokemonCard" class="card hidden">
+            <h2 id="pokeName"></h2>
+            <img id="pokeImg" src="" alt="Imagen del Pokémon">
+            <div class="info">
+                <p><strong>ID:</strong> #<span id="pokeId"></span></p>
+                <p><strong>Tipo:</strong> <span id="pokeType"></span></p>
+            </div>
+        </div>
+
+        <p id="errorMessage" class="error hidden">Pokemon no encontrado!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
